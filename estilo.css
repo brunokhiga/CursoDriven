@@ -223,7 +223,7 @@ body {
     padding-bottom: 7px;
 }
 
-.escondido {
-    display: none;
+.botao-checkout{
+    background-color: #32B72F;
 }
 
