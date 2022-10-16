@@ -59,6 +59,7 @@ body {
 .foto-produto {
     width: 144px;
     height: 87px;
+    align-self: center;
 }
 
 .nome-produto {
@@ -117,11 +118,6 @@ body {
     margin-left: 16px;
 }
 
-.prato img{
-    width: 144px;
-    height: 87px;
-}
-
 .container-bebidas {
     margin-top: 27px;
 }
@@ -130,6 +126,7 @@ body {
     width: 414px;
     margin-top: 15px;
     display: flex;
+    /*display: inline-block;*/
     overflow-x: scroll;
     padding-right: 21px;
     box-sizing: border-box;
@@ -149,6 +146,12 @@ body {
     padding-bottom: 13px;
     box-sizing: border-box;
     margin-left: 16px;
+}
+
+.teste {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
 }
 
 .container-sobremesas {
@@ -209,5 +212,18 @@ body {
     text-align: center;
     letter-spacing: 0.018em;
     color: #FFFFFF;
+}
+
+.prato-selecionado, .bebida-selecionada, .sobremesa-selecionada {
+    border: 6px solid #32B72F;
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 12px;
+    padding-bottom: 7px;
+}
+
+.escondido {
+    display: none;
 }
 
