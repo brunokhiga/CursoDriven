@@ -18,10 +18,14 @@ function resumoPedido(){
     const preco_3 = parseFloat(preco_sobremesa_escolhida.replace(",","."));
     
     //soma total
-    const preco_final = preco_1 + preco_1 + preco_3;
+    const preco_final = preco_1 + preco_2 + preco_3;
 
     //passando para a formatacao da mensagem
     const mensagem = "Olá, gostaria de fazer o pedido:" + "\n" + "- Prato: " + prato_escolhido + "\n" + "- Bebida: " + bebida_escolhida + "\n" + "- Sobremesa: " + sobremesa_escolhida + "\n" + "Total: R$" + preco_final.toFixed(2);
+
+    alert(preco_1);
+    alert(preco_2);
+    alert(preco_3);
 
     //codifica a mensagem e prepara o link
     const texto_codificado = encodeURIComponent(mensagem);
