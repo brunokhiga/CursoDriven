@@ -239,3 +239,7 @@ body {
 .botao-checkout {
     background-color: #32B72F;
 }
+
+.link-desativado {
+    pointer-events: none;
+}

@@ -3,6 +3,10 @@ let controle_prato = false;
 let controle_bebida = false;
 let controle_sobremesa = false;
 
+let prato_escolhido = ''
+let bebida_escolhida = ''
+let sobremesa_Escolhida = ''
+
 function ativaCheck(seletor){
 
     let todos_produtos = document.querySelectorAll(".check-icon");
@@ -103,6 +107,7 @@ function selecionaPrato(seletor) {
     ativaCheck(seletor); //apagar caso nao consiga corrigir o problema do check
 
     controle_prato = botao_prato.classList.contains("prato-selecionado");
+    //COLOCAR PRATO ESCOLHIDO NA VARIAVEL CRIADA LA EM CIMA
 }
 
 function selecionaBebida(seletor) {
@@ -146,5 +151,8 @@ function checkout(){
         const botao_finalizacao = document.querySelector(".fazer-pedido");
         botao_finalizacao.innerHTML = "Fechar pedido";
         botao_finalizacao.classList.add("botao-checkout");
+
+        const ativar_whatsapp = document.querySelector(".link-wpp");
+        ativar_whatsapp.classList.remove("link-desativado");
     }
 }
