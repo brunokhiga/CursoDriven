@@ -3,6 +3,32 @@ let controle_prato = false;
 let controle_bebida = false;
 let controle_sobremesa = false;
 
+function ativaCheck(seletor){
+
+    let todos_produtos = document.querySelectorAll(".check-icon");
+    //todos_produtos.classList.remove('invisivel');
+
+    const checkProduto = document.querySelector(seletor);
+    if (checkProduto.classList.contains( "prato-selecionado" || "bebida-selecionada" || "sobremesa-seleionada" )){
+        if (checkProduto.classList.contains("prato-1") ){
+            let produto_check = document.querySelector(".check-prato-1");
+            produto_check.classList.remove('invisivel');
+        }
+        if (checkProduto.classList.contains("prato-2") ){
+            let produto_check = document.querySelector(".check-prato-2");
+            produto_check.classList.remove('invisivel');
+        }
+        if (checkProduto.classList.contains("prato-3") ){
+            let produto_check = document.querySelector(".check-prato-3");
+            produto_check.classList.remove('invisivel');
+        }
+        if (checkProduto.classList.contains("bebida-1") ){
+            let produto_check = document.querySelector(".check-bebida-1");
+            produto_check.classList.remove('invisivel');
+        }
+    }
+}
+
 function selecionaPrato(seletor) {
     const pratoSelecionadoAnteriormente = document.querySelector(".prato-selecionado");
 
@@ -15,7 +41,10 @@ function selecionaPrato(seletor) {
     const botao_prato = document.querySelector(seletor);
     botao_prato.classList.toggle('prato-selecionado');
 
+    ativaCheck(seletor); //apagar caso nao consiga corrigir o problema do check
+
     controle_prato = botao_prato.classList.contains("prato-selecionado");
+    console.log(controle_prato);
 }
 
 function selecionaBebida(seletor) {
@@ -29,6 +58,8 @@ function selecionaBebida(seletor) {
 
     const botao_bebida = document.querySelector(seletor);
     botao_bebida.classList.toggle('bebida-selecionada');
+
+    ativaCheck(seletor); //apagar caso nao consiga corrigir o problema do check
 
     controle_bebida = botao_bebida.classList.contains("bebida-selecionada");
 }
@@ -45,6 +76,8 @@ function selecionaSobremesa(seletor) {
     const botao_sobremesa = document.querySelector(seletor);
     botao_sobremesa.classList.toggle('sobremesa-selecionada');
 
+    ativaCheck(seletor); //apagar caso nao consiga corrigir o problema do check
+
     controle_sobremesa = botao_sobremesa.classList.contains("sobremesa-selecionada");
 }
 
@@ -58,7 +91,6 @@ function checkout(){
     if (controle_prato == true && controle_bebida == true && controle_sobremesa == true){
         const botao_finalizacao = document.querySelector(".fazer-pedido");
         botao_finalizacao.innerHTML = "Fechar pedido";
-        botao_finalizacao.classList.toggle("botao-checkout");
-        console.log('era pra adicionar');
+        botao_finalizacao.classList.add("botao-checkout");
     }
 }

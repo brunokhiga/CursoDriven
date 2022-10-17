@@ -22,6 +22,7 @@ body {
     flex-direction: column;
     justify-content: center;
     filter: drop-shadow(0px 2px 2px grey);
+    z-index: 1;
 }
 
 .driveneats {
@@ -89,12 +90,23 @@ body {
     color: #000000;
 }
 
+.check-icon{
+    width: 15.44px;
+    height: 15.44px;
+    align-self: end;
+}
+
+.invisivel {
+    display: none;
+}
+
 .container-comidas {
     margin-top: 123px;
 }
 
 .lista-pratos {
     width: 414px;
+    height: 220px;
     margin-top: 15px;
     display: flex;
     overflow-x: scroll;
@@ -116,6 +128,7 @@ body {
     padding-bottom: 13px;
     box-sizing: border-box;
     margin-left: 16px;
+    filter: drop-shadow(2px 2px 2px lightgrey);
 }
 
 .container-bebidas {
@@ -124,9 +137,9 @@ body {
 
 .lista-bebidas{
     width: 414px;
+    height: 220px;
     margin-top: 15px;
     display: flex;
-    /*display: inline-block;*/
     overflow-x: scroll;
     padding-right: 21px;
     box-sizing: border-box;
@@ -146,12 +159,7 @@ body {
     padding-bottom: 13px;
     box-sizing: border-box;
     margin-left: 16px;
-}
-
-.teste {
-    background-color: blue;
-    width: 100px;
-    height: 100px;
+    filter: drop-shadow(2px 2px 2px lightgrey);
 }
 
 .container-sobremesas {
@@ -160,6 +168,7 @@ body {
 
 .lista-sobremesas{
     width: 414px;
+    height: 220px;
     margin-top: 15px;
     display: flex;
     overflow-x: scroll;
@@ -181,6 +190,7 @@ body {
     padding-bottom: 13px;
     box-sizing: border-box;
     margin-left: 16px;
+    filter: drop-shadow(2px 2px 2px lightgrey);
 }
 
 .barra-inferior {
@@ -193,6 +203,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .fazer-pedido {
