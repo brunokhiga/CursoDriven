@@ -23,10 +23,6 @@ function resumoPedido(){
     //passando para a formatacao da mensagem
     const mensagem = "Olá, gostaria de fazer o pedido:" + "\n" + "- Prato: " + prato_escolhido + "\n" + "- Bebida: " + bebida_escolhida + "\n" + "- Sobremesa: " + sobremesa_escolhida + "\n" + "Total: R$" + preco_final.toFixed(2);
 
-    alert(preco_1);
-    alert(preco_2);
-    alert(preco_3);
-
     //codifica a mensagem e prepara o link
     const texto_codificado = encodeURIComponent(mensagem);
 
