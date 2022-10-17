@@ -4,8 +4,33 @@ let controle_bebida = false;
 let controle_sobremesa = false;
 
 let prato_escolhido = ''
+let preco_prato_escolhido = ''
+let testando = parseFloat(preco_prato_escolhido.replace(",","."));
 let bebida_escolhida = ''
-let sobremesa_Escolhida = ''
+let preco_bebida_escolhida = ''
+let sobremesa_escolhida = ''
+let preco_sobremesa_escolhida = ''
+
+function resumoPedido(){
+    //transformar para somar
+    const preco_1 = parseFloat(preco_prato_escolhido.replace(",","."));
+    const preco_2 = parseFloat(preco_bebida_escolhida.replace(",","."));
+    const preco_3 = parseFloat(preco_sobremesa_escolhida.replace(",","."));
+    
+    //soma total
+    const preco_final = preco_1 + preco_1 + preco_3;
+
+    //passando para a formatacao da mensagem
+    const mensagem = "Olá, gostaria de fazer o pedido:" + "\n" + "- Prato: " + prato_escolhido + "\n" + "- Bebida: " + bebida_escolhida + "\n" + "- Sobremesa: " + sobremesa_escolhida + "\n" + "Total: R$" + preco_final.toFixed(2);
+
+    //codifica a mensagem e prepara o link
+    const texto_codificado = encodeURIComponent(mensagem);
+
+    const link_whatsapp_codificado = "https://wa.me/?text=" + texto_codificado;
+
+    const botao_whatsapp = document.querySelector(".link-wpp");
+    botao_whatsapp.href = link_whatsapp_codificado;
+}
 
 function ativaCheck(seletor){
 
@@ -107,7 +132,14 @@ function selecionaPrato(seletor) {
     ativaCheck(seletor); //apagar caso nao consiga corrigir o problema do check
 
     controle_prato = botao_prato.classList.contains("prato-selecionado");
-    //COLOCAR PRATO ESCOLHIDO NA VARIAVEL CRIADA LA EM CIMA
+
+    //Guarda o nome do prato escolhido
+    const nome_do_prato = botao_prato.querySelector(".nome-produto");
+    prato_escolhido = nome_do_prato.textContent;
+
+    //Guarda o preço do prato escolhido
+    const preco_do_prato = botao_prato.querySelector(".preco-produto");
+    preco_prato_escolhido = preco_do_prato.textContent;
 }
 
 function selecionaBebida(seletor) {
@@ -123,6 +155,14 @@ function selecionaBebida(seletor) {
     ativaCheck(seletor); //apagar caso nao consiga corrigir o problema do check
 
     controle_bebida = botao_bebida.classList.contains("bebida-selecionada");
+    
+    //Guarda o nome do prato escolhido
+    const nome_da_bebida = botao_bebida.querySelector(".nome-produto");
+    bebida_escolhida = nome_da_bebida.textContent;
+
+    //Guarda o preço do prato escolhido
+    const preco_da_bebida = botao_bebida.querySelector(".preco-produto");
+    preco_bebida_escolhida = preco_da_bebida.textContent;
 }
 
 function selecionaSobremesa(seletor) {
@@ -138,20 +178,25 @@ function selecionaSobremesa(seletor) {
     ativaCheck(seletor); //apagar caso nao consiga corrigir o problema do check
 
     controle_sobremesa = botao_sobremesa.classList.contains("sobremesa-selecionada");
+
+        //Guarda o nome do prato escolhido
+        const nome_da_sobremesa = botao_sobremesa.querySelector(".nome-produto");
+        sobremesa_escolhida = nome_da_sobremesa.textContent;
+    
+        //Guarda o preço do prato escolhido
+        const preco_da_sobremesa = botao_sobremesa.querySelector(".preco-produto");
+        preco_sobremesa_escolhida = preco_da_sobremesa.textContent;
 }
 
 function checkout(){
-    //    if (controle_prato == true && controle_bebida == true && controle_sobremesa == true){
-    //        console.log('deu certo e bora pro checkout');
-    //   }else{
-    //           console.log('deu certo e não vamos para o checkout');
-    //        }
-    
+    //verificando e todos as categorias de produtos foram selecionadas
     if (controle_prato == true && controle_bebida == true && controle_sobremesa == true){
+        //trocando o botao de finalizar o pedido
         const botao_finalizacao = document.querySelector(".fazer-pedido");
         botao_finalizacao.innerHTML = "Fechar pedido";
         botao_finalizacao.classList.add("botao-checkout");
 
+        //ativando o botao de finalizar o pedido
         const ativar_whatsapp = document.querySelector(".link-wpp");
         ativar_whatsapp.classList.remove("link-desativado");
     }
