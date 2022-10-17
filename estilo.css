@@ -93,7 +93,9 @@ body {
 .check-icon{
     width: 15.44px;
     height: 15.44px;
-    align-self: end;
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
 }
 
 .invisivel {
@@ -234,7 +236,6 @@ body {
     padding-bottom: 7px;
 }
 
-.botao-checkout{
+.botao-checkout {
     background-color: #32B72F;
 }
-

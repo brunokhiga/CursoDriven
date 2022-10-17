@@ -8,31 +8,90 @@ function ativaCheck(seletor){
     let todos_produtos = document.querySelectorAll(".check-icon");
     //todos_produtos.classList.remove('invisivel');
 
+    //isso aqui é uma gambiarra, com certeza tem muitas maneiras melhores de fazer
     const checkProduto = document.querySelector(seletor);
-    if (checkProduto.classList.contains( "prato-selecionado" || "bebida-selecionada" || "sobremesa-seleionada" )){
+    if (checkProduto.classList.contains("prato-selecionado")){
         if (checkProduto.classList.contains("prato-1") ){
             let produto_check = document.querySelector(".check-prato-1");
             produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-prato-2");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-prato-3");
+            apaga2.classList.add('invisivel');
         }
         if (checkProduto.classList.contains("prato-2") ){
             let produto_check = document.querySelector(".check-prato-2");
             produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-prato-1");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-prato-3");
+            apaga2.classList.add('invisivel');
         }
         if (checkProduto.classList.contains("prato-3") ){
             let produto_check = document.querySelector(".check-prato-3");
             produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-prato-1");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-prato-2");
+            apaga2.classList.add('invisivel');
         }
+    }
+    if (checkProduto.classList.contains("bebida-selecionada")){
         if (checkProduto.classList.contains("bebida-1") ){
             let produto_check = document.querySelector(".check-bebida-1");
             produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-bebida-2");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-bebida-3");
+            apaga2.classList.add('invisivel');
+        }
+        if (checkProduto.classList.contains("bebida-2") ){
+            let produto_check = document.querySelector(".check-bebida-2");
+            produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-bebida-1");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-bebida-3");
+            apaga2.classList.add('invisivel');
+        }
+        if (checkProduto.classList.contains("bebida-3") ){
+            let produto_check = document.querySelector(".check-bebida-3");
+            produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-bebida-1");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-bebida-2");
+            apaga2.classList.add('invisivel');
+        }
+    }
+    if (checkProduto.classList.contains("sobremesa-selecionada")){
+        if (checkProduto.classList.contains("sobremesa-1") ){
+            let produto_check = document.querySelector(".check-sobremesa-1");
+            produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-sobremesa-2");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-sobremesa-3");
+            apaga2.classList.add('invisivel');
+        }
+        if (checkProduto.classList.contains("sobremesa-2") ){
+            let produto_check = document.querySelector(".check-sobremesa-2");
+            produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-sobremesa-1");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-sobremesa-3");
+            apaga2.classList.add('invisivel');
+        }
+        if (checkProduto.classList.contains("sobremesa-3") ){
+            let produto_check = document.querySelector(".check-sobremesa-3");
+            produto_check.classList.remove('invisivel');
+            let apaga1 = document.querySelector(".check-sobremesa-1");
+            apaga1.classList.add('invisivel');
+            let apaga2 = document.querySelector(".check-sobremesa-2");
+            apaga2.classList.add('invisivel');
         }
     }
 }
 
 function selecionaPrato(seletor) {
     const pratoSelecionadoAnteriormente = document.querySelector(".prato-selecionado");
-
-    //console.log(pratoSelecionadoAnteriormente);
 
     if ( pratoSelecionadoAnteriormente !== null ){
         pratoSelecionadoAnteriormente.classList.remove('prato-selecionado');
@@ -44,13 +103,10 @@ function selecionaPrato(seletor) {
     ativaCheck(seletor); //apagar caso nao consiga corrigir o problema do check
 
     controle_prato = botao_prato.classList.contains("prato-selecionado");
-    console.log(controle_prato);
 }
 
 function selecionaBebida(seletor) {
     const bebidaSelecionadaAnteriormente = document.querySelector(".bebida-selecionada");
-
-    //console.log(bebidaSelecionadaAnteriormente);
 
     if ( bebidaSelecionadaAnteriormente !== null ){
         bebidaSelecionadaAnteriormente.classList.remove('bebida-selecionada');
@@ -66,8 +122,6 @@ function selecionaBebida(seletor) {
 
 function selecionaSobremesa(seletor) {
     const sobremesaSelecionadaAnteriormente = document.querySelector(".sobremesa-selecionada");
-
-    //console.log(sobremesaSelecionadaAnteriormente);
 
     if ( sobremesaSelecionadaAnteriormente !== null ){
         sobremesaSelecionadaAnteriormente.classList.remove('sobremesa-selecionada');
